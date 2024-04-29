@@ -51,8 +51,8 @@
     
         <!-- Image -->
         <div class="mb-4">
-            <label for="image" class="block font-semibold">Image:</label>
-            <input type="file" id="image" name="image" class="form-input mt-1 block w-full rounded">
+            <label for="image" class="block font-semibold">Image URL:</label>
+            <input type="text" id="image" name="image" class="form-input mt-1 block w-full rounded">
             @error('image')
                 <p class="text-red-500">{{ $message }}</p>
             @enderror

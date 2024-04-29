@@ -36,7 +36,7 @@ class ProductController extends Controller
             'title' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Exemple de validation pour les images
+            // 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048', // Exemple de validation pour les images
             'quantity' => 'required|integer'
         ]);
 
@@ -46,14 +46,15 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
+        $product->image = $request->image;
 
-        // Gestion de l'image si elle est fournie
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('images/products'), $imageName);
-            $product->image = $imageName;
-        }
+        // // Gestion de l'image si elle est fournie
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '_' . $image->getClientOriginalName();
+        //     $image->move(public_path('images/products'), $imageName);
+        //     $product->image = $imageName;
+        // }
 
         $product->save(); // Enregistre le produit dans la base de données
 
@@ -91,7 +92,7 @@ class ProductController extends Controller
             'title' => 'required',
             'description' => 'required',
             'price' => 'required|numeric',
-            'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
+            // 'image' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
             'quantity' => 'required|integer'
         ]);
         // Check if validation fails
@@ -103,14 +104,15 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = $request->price;
         $product->quantity = $request->quantity;
+        $product->image = $request->image;
 
         // Gestion de l'image si elle est fournie
-        if ($request->hasFile('image')) {
-            $image = $request->file('image');
-            $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->move(public_path('images/products'), $imageName);
-            $product->image = $imageName;
-        }
+        // if ($request->hasFile('image')) {
+        //     $image = $request->file('image');
+        //     $imageName = time() . '_' . $image->getClientOriginalName();
+        //     $image->move(public_path('images/products'), $imageName);
+        //     $product->image = $imageName;
+        // }
 
         $product->save(); // Met à jour le produit dans la base de données
 
