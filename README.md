@@ -5,8 +5,7 @@ composer install
 
 copy .env.example .env
 set in .env
-SHOPIFY_STORE="043481-a7.myshopify.com"
-ACCESS_TOKEN="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"
+shopify tokens are provided in the email for test
 
 configure the database in env
 
