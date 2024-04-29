@@ -4,7 +4,8 @@ npm install
 composer install
 
 copy .env.example .env
-set in .env
+set in .env<br>
+the keys for tets will be provided in the email also <br>
 SHOPIFY_STORE="043481-a7.myshopify.com"
 ACCESS_TOKEN="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"
 
